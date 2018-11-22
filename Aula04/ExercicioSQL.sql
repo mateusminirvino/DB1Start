@@ -46,6 +46,36 @@ Select cidade1.nome, uf.nome from cidade1 inner join uf on uf.id = cidade1.uf_id
 
 select count(cidade1.id) as 'Quantidade de cidades', uf.nome from cidade1 inner join uf on uf.id = cidade1.uf_id group by uf.nome
 
+CREATE TABLE IF NOT EXISTS `mydb`.`pessoa` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `documento` VARCHAR(14) NOT NULL,
+  PRIMARY KEY (`id`))
+
+CREATE TABLE IF NOT EXISTS `mydb`.`endereco` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipoLogradouro` VARCHAR(10) NOT NULL,
+  `logradouro` VARCHAR(100) NOT NULL,
+  `numero` VARCHAR(10) NOT NULL,
+  `complemento` VARCHAR(10) NOT NULL,
+  `cep` VARCHAR(8) NOT NULL,
+  `tipo` VARCHAR(20) NOT NULL,
+  `cidade_id` INT NOT NULL,
+  `pessoa_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_endereco_cidade1_idx` (`cidade_id` ASC),
+  INDEX `fk_endereco_pessoa1_idx` (`pessoa_id` ASC),
+  CONSTRAINT `fk_endereco_cidade1`
+    FOREIGN KEY (`cidade_id`)
+    REFERENCES `mydb`.`cidade1` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_endereco_pessoa1`
+    FOREIGN KEY (`pessoa_id`)
+    REFERENCES `mydb`.`pessoa` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+
 select * from pessoa
 
 select * from endereco
@@ -59,3 +89,11 @@ values ('Rua', 'Brasil', '255', 'Apto 02', '88888000', 'residencial', 15, 1),
  ('Rua', 'Mauá', '555', 'Apto 01', '55555000', 'comercial', 15, 1),
  ('Rua', 'Paraná', '123', 'Apto 32', '77777000', 'residencial', 16, 2),
  ('Rua', 'Japão', '321', 'Apto 33', '99999000', 'comercial', 16, 2)
+               
+insert into pessoa (nome, documento)
+values ('Gabriele', 111.111.111-11),
+('Maria', 222.222.222-22)
+               
+insert into endereco (tipoLogradouro, logradouro, numero, complemento, cep, tipo, cidade_id, pessoa_id)
+values ('Rua', 'Mandaguari', '333', 'Apto 33', '33333000', 'comercial', /*verificar qual código da cidade de SC*/"15", 3),
+ ('Rua', 'Duque de Caxias', '444', 'Apto 44', '44444000', 'comercial', /*verificar qual código da cidade de SC*/15, 4)
