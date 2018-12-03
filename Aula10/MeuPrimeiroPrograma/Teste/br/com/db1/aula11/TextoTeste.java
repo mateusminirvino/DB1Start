@@ -29,13 +29,37 @@ public class TextoTeste {
 	@Test
 	public void deveRetornarQuantidadeDeLetrasComEspaco() {
 		int quantidade = texto.contarLetrasComEspaço();
-		Assert.assertEquals(10, quantidade);
+		Assert.assertEquals(8, quantidade);
 	}
 	
 	@Test
-	public void deveRetornarAQuantidadeDeLetrasDoItem3() {
-		int quantidade = texto.contarLetrasExcluindoEspacos();
-		Assert.assertEquals(8, quantidade);
+	public void deveRetornarAStringDoItem3() {
+		String resultado = texto.retirarEspacos();
+		Assert.assertEquals("DB1START", resultado);
+	}
+	
+	@Test
+	public void deveRetornarAsQuatroPrimeirasLetrasDoNome() {
+		String resultado = texto.exibirQuatroPrimeirasLetrasDoNome("Mateus Clemente Minirvino");
+		Assert.assertEquals("Mate", resultado);
+	}
+	
+	@Test
+	public void deveRetornarAPartirDaTerceiraLetraDoNome() {
+		String resultado = texto.exibirAPartirDaTerceiraLetraDoNome("Mateus Clemente Minirvino");
+		Assert.assertEquals("eus Clemente Minirvino", resultado);
+	}
+	
+	@Test
+	public void deveRetornarAsQuatroUltimasLetrasDoNome() {
+		String resultado = texto.exibirQuatroUltimasLetrasDoNome("Mateus Clemente Minirvino");
+		Assert.assertEquals("vino", resultado);
+	}
+	
+	@Test
+	public void deveSubstituirNomePorAluno() {
+		String resultado = texto.substituirNomePorAluno("Mateus Clemente Minirvino");
+		Assert.assertEquals("Aluno Clemente Minirvino", resultado);
 	}
 	
 	
