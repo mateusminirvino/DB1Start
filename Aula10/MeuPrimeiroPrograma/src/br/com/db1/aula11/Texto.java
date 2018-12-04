@@ -41,9 +41,39 @@ public class Texto {
 	}
 	
 	public String substituirNomePorAluno(String nomeCompleto) {
+		/*int count = 0;
+		while(nomeCompleto.charAt(count) != ' ') {
+				count++;
+			}
+		}*/
+			
 		String aluno = "Aluno ";
 		nomeCompleto = nomeCompleto.split(" ",2)[1];
 		aluno = aluno.concat(nomeCompleto);
 		return aluno;
 	}
+	
+	public String [] separarTextoPorVirgula() {
+		String texto = "banana,maçã,melancia";
+		String array [] = new String [50];
+		array = texto.split(",");
+		return array;
+	}
+	
+	public int contaVogais (String texto) {
+		int count = 0;
+		texto.toLowerCase();
+		for (int i = 0; i < texto.length(); i++) {
+			char c = texto.charAt(i);
+			if (c=='a'|| c=='e'|| c=='i'|| c=='o'|| c=='u')
+				count++;
+		}
+		return count;
+	}
+	
+	public String inverterTexto(String texto) {
+		String textoInvertido = new StringBuilder(texto).reverse().toString();
+		return textoInvertido;
+	}
+	
 }
