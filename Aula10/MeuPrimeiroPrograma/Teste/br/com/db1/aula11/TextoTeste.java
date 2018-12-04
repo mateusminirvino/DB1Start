@@ -59,7 +59,7 @@ public class TextoTeste {
 	@Test
 	public void deveSubstituirNomePorAluno() {
 		String resultado = texto.substituirNomePorAluno("Mateus Clemente Minirvino");
-		Assert.assertEquals("Aluno Clemente Minirvino", resultado);
+		Assert.assertEquals("ALUNO Clemente Minirvino", resultado);
 	}
 	
 	@Test

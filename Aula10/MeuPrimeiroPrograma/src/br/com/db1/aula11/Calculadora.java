@@ -36,7 +36,7 @@ public class Calculadora {
 	public Integer contaImparAteCem(Integer numeroInicial) {
 		Integer i;
 		Integer count = 0;
-		for (i=numeroInicial; i<100; i++) {
+		for (i=numeroInicial; i<=100; i++) {
 			if (i % 2 > 0)
 				count = count+1;
 		}

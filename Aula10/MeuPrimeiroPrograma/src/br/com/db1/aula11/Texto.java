@@ -41,16 +41,16 @@ public class Texto {
 	}
 	
 	public String substituirNomePorAluno(String nomeCompleto) {
-		/*int count = 0;
-		while(nomeCompleto.charAt(count) != ' ') {
-				count++;
-			}
-		}*/
+		int indexEspaco = nomeCompleto.indexOf(" ");
+		String primeiroNome = nomeCompleto.substring(0, indexEspaco);
+		String nomeSubstituido;
+		return nomeSubstituido = nomeCompleto.replace(primeiroNome, "ALUNO");
+		 
 			
-		String aluno = "Aluno ";
+		/*String aluno = "Aluno ";
 		nomeCompleto = nomeCompleto.split(" ",2)[1];
 		aluno = aluno.concat(nomeCompleto);
-		return aluno;
+		return aluno;*/
 	}
 	
 	public String [] separarTextoPorVirgula() {
