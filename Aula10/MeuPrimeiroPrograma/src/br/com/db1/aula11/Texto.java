@@ -43,8 +43,7 @@ public class Texto {
 	public String substituirNomePorAluno(String nomeCompleto) {
 		int indexEspaco = nomeCompleto.indexOf(" ");
 		String primeiroNome = nomeCompleto.substring(0, indexEspaco);
-		String nomeSubstituido;
-		return nomeSubstituido = nomeCompleto.replace(primeiroNome, "ALUNO");
+		return nomeCompleto.replace(primeiroNome, "ALUNO");
 		 
 			
 		/*String aluno = "Aluno ";
