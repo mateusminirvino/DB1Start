@@ -24,4 +24,18 @@ public class Cidade {
 	@Column(name = "uf", length = 2, nullable = false)
 	private UF uf;
 
+	protected Cidade() {
+
+	}
+
+	public Cidade(String nome, UF uf) {
+		this.nome = nome;
+		this.uf = uf;
+	}
+
+	public void alteraNome(String string) {
+		this.nome = string;
+		
+	}
+
 }

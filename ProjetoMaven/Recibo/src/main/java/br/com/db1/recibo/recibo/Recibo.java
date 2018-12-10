@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.com.db1.recibo.cliente.Pessoa;
+import br.com.db1.recibo.pessoa.Pessoa;
 
 @Entity
 @Table(name = "recibo")
