@@ -17,7 +17,7 @@ public enum TratamentoNome {
 	QUATRO_PRIMEIRAS_LETRAS {
 		@Override
 		public String trataNome(String nome) {
-			return nome.substring(0, 3);
+			return nome.substring(0, 4);
 		}
 	};
 
