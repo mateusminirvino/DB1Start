@@ -1,6 +1,7 @@
 package br.com.db1start.calculadora.calculadoraapi.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class CalculadoraService {
 		calculadora.setDataDaOperacao(LocalDateTime.now());
 		calculadoraRespository.save(calculadora);
 		return calculadora;
+	}
+	
+	public List<Calculadora> buscarTodosCalculos(){
+		return calculadoraRespository.findAll();
 	}
 
 }
